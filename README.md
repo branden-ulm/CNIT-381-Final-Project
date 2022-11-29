@@ -30,3 +30,5 @@ _single underscores_
 __double underscores__
 
 un*frigging*believable
+
+Use the `printf()` function.
