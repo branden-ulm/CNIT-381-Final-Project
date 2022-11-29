@@ -5,3 +5,10 @@ Team B$B final chat bot project for CNIT-381
 
 <pre><code>This is a code block.
 </code></pre>
+
+<p>Here is an example of AppleScript:</p>
+
+<pre><code>tell application "Foo"
+    beep
+end tell
+</code></pre>
