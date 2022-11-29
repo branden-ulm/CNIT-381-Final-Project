@@ -42,3 +42,5 @@ Use the `printf()` function.
 - - -
 
 ---------------------------------------
+
+![Alt text](/path/to/img.jpg)
