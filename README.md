@@ -43,4 +43,4 @@ Use the `printf()` function.
 
 ---------------------------------------
 
-![Alt text](/path/to/img.jpg)
+![Alt text](/hamster.jpg)
