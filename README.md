@@ -32,3 +32,13 @@ __double underscores__
 un*frigging*believable
 
 Use the `printf()` function.
+
+* * *
+
+***
+
+*****
+
+- - -
+
+---------------------------------------
