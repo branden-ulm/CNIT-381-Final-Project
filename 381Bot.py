@@ -106,12 +106,6 @@ def pickuplines(incoming_msg):
     response = Response()
     response.markdown = useful.pickuplines()
     return response
-def youtube(incoming_msg):
-    response = Response()
-    response.markdown = "https://www.youtube.com/watch?v=ZLfVtSg1c70&t=142s"
-    response.markdown += "\nhttps://www.youtube.com/watch?v=u7GDkfCWdI8"
-    response.markdown += "\nhttps://www.youtube.com/watch?v=UqKPjSsMnSE"
-    return response
 def helpme(incoming_msg):
     response = Response()
     response.markdown = useful.uselesshelpme()
@@ -127,9 +121,7 @@ bot.add_command("rcarp", "Check Arp Table", restconf)
 bot.add_command("nclock", "Check Clock", clock)
 bot.add_command("nisakmp", "Check Isakmp Policy", isakmp)
 bot.add_command("nstart", "Check Startup Config", startup)
-bot.add_command("rps", "Dare To Challenge The Rock Paper Scissors God?", rps)
 bot.add_command("pickup", "This Will Help?", pickuplines)
-bot.add_command("youtube", "Greatest Youtube Videos Of All Time", youtube)
 bot.add_command("helpme", "Need Some Extra Help?", helpme)
 bot.add_command("nroute", "Show IP route table", nroute)
 
