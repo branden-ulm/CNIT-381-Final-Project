@@ -117,21 +117,6 @@ def netmikoroute():
     output += connection.send_command("show ip route")
     connection.disconnect()
     return output
-def uselessrps():
-    output = "Ah, you wish to challenge the master? Fine."
-    rps = ["rock","paper","scissors"]
-    namsrps = random.choice(rps)
-    yourrps=""
-    if namsrps == "rock":
-        yourrps = "scissors"
-    elif namsrps == "paper":
-        yourrps = "rock"
-    elif namsrps == "scissors":
-        yourrps = "paper"
-    output += "\nI choose "+ namsrps
-    output += "\nYou choose "+ yourrps
-    output += "\nNo Contest, Easy, Get Owned."
-    return output
 def pickuplines():
     quotes = ["Are you a MAC address, because I'd put you on my ARP table?",
               "You had me at 'Hello World'", "Do you like firewalls? I use protection.", 
