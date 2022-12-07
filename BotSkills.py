@@ -132,9 +132,16 @@ def uselessrps():
     output += "\nYou choose "+ yourrps
     output += "\nNo Contest, Easy, Get Owned."
     return output
-def uselessquotes():
-    output = "Word of Advice: "
-    quotes = ["Logan should not play csgo, no talent at all","We are adults now; nothing can hold us","Go oil and gas...they pay big","IPtables will make you cry","Maybe is not an answer. Yes or no!","If you have 100 ACLs There is something wrong with you","Stupid bot do your work","Very dangerous thing, debug all"]
+def pickuplines():
+    output = "Network Pick up line: "
+    quotes = ["Are you a MAC address, because I'd put you on my ARP table?",
+              "You had me at 'Hello World'", "Do you like firewalls? I use protection.", 
+              "My server never goes down, but I would for you.", "
+              "Baby, you must be running on TCP - everytime I talk to you, you give me an ACK.",
+              "seq 69 permit any any", "Are you my standby router, because you're hot.", 
+              "You are my favorite mode, promiscuous... ", "ICMP; I see you and me.", 
+              "I wish I was your keyboard so I could be your type.", "Are you my EIGRP Neighbor, because I want to form an adjacency.", 
+              "If I'd put you in my trunk, you would be dynamic-desirable :)"]
     output += random.choice(quotes)
     return output
 def uselesshelpme():
