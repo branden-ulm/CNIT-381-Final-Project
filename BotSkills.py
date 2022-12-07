@@ -77,16 +77,6 @@ def monitorskill():
             print("IP Changed from "+prevIP+" to "+currIP)
             prevIP = currIP
         time.sleep(30)
-def netmikoclock():
-    router = {'device_type': 'cisco_ios', 'host': '192.168.56.102', 'username': 'cisco','password': 'cisco123!','port': 22, 'secret': 'cisco', 'verbose': True}
-    connection = ConnectHandler(**router)
-    prompt = connection.find_prompt()
-    if '>' in prompt:
-        connection.enable()
-    output = ""
-    output += connection.send_command("show clock")
-    connection.disconnect()
-    return output
 def netmikoisakmp():
     router = {'device_type': 'cisco_ios', 'host': '192.168.56.102', 'username': 'cisco','password': 'cisco123!','port': 22, 'secret': 'cisco', 'verbose': True}
     connection = ConnectHandler(**router)
