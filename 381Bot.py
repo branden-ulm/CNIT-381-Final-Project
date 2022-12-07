@@ -102,9 +102,9 @@ def rps(incoming_msg):
     response = Response()
     response.markdown = useful.uselessrps()
     return response
-def quotes(incoming_msg):
+def pickuplines(incoming_msg):
     response = Response()
-    response.markdown = useful.uselessquotes()
+    response.markdown = useful.pickuplines()
     return response
 def youtube(incoming_msg):
     response = Response()
@@ -128,10 +128,11 @@ bot.add_command("nclock", "Check Clock", clock)
 bot.add_command("nisakmp", "Check Isakmp Policy", isakmp)
 bot.add_command("nstart", "Check Startup Config", startup)
 bot.add_command("rps", "Dare To Challenge The Rock Paper Scissors God?", rps)
-bot.add_command("advice", "Need Some Advice?", quotes)
+bot.add_command("pickup", "This Will Help?", pickuplines)
 bot.add_command("youtube", "Greatest Youtube Videos Of All Time", youtube)
 bot.add_command("helpme", "Need Some Extra Help?", helpme)
 bot.add_command("nroute", "Show IP route table", nroute)
+
 
 
 # Every bot includes a default "/echo" command.  You can remove it, or any
