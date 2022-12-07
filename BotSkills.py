@@ -136,7 +136,7 @@ def pickuplines():
     output = "Network Pick up line: "
     quotes = ["Are you a MAC address, because I'd put you on my ARP table?",
               "You had me at 'Hello World'", "Do you like firewalls? I use protection.", 
-              "My server never goes down, but I would for you.", "
+              "My server never goes down, but I would for you.",
               "Baby, you must be running on TCP - everytime I talk to you, you give me an ACK.",
               "seq 69 permit any any", "Are you my standby router, because you're hot.", 
               "You are my favorite mode, promiscuous... ", "ICMP; I see you and me.", 
