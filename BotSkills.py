@@ -143,7 +143,7 @@ def pickuplines():
               "I wish I was your keyboard so I could be your type.", "Are you my EIGRP Neighbor, because I want to form an adjacency.", 
               "If I'd put you in my trunk, you would be dynamic-desirable :)"]
     
-    mysteryboy = random.randit(0,11)
+    mysteryboy = random.randint(0,11)
     return mysteryboy
 def uselesshelpme():
     output = "Sincerely, with all of my heart,\nNo."
