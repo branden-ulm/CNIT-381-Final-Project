@@ -133,7 +133,6 @@ def uselessrps():
     output += "\nNo Contest, Easy, Get Owned."
     return output
 def pickuplines():
-    mysteryboy = 0
     quotes = ["Are you a MAC address, because I'd put you on my ARP table?",
               "You had me at 'Hello World'", "Do you like firewalls? I use protection.", 
               "My server never goes down, but I would for you.",
@@ -143,8 +142,8 @@ def pickuplines():
               "I wish I was your keyboard so I could be your type.", "Are you my EIGRP Neighbor, because I want to form an adjacency.", 
               "If I'd put you in my trunk, you would be dynamic-desirable :)"]
     
-    mysteryboy = random.randint(0,11)
-    return mysteryboy
-def uselesshelpme():
-    output = "Sincerely, with all of my heart,\nNo."
-    return output
+    mysteryboy = random.randint(0,len(quotes)-1)
+    return quotes[mysteryboy]
+###def uselesshelpme():
+    ###output = "Sincerely, with all of my heart,\nNo."
+    ###return output
