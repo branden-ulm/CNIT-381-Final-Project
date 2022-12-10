@@ -119,6 +119,3 @@ def pickuplines():
     
     mysteryboy = random.randint(0,len(quotes)-1)
     return quotes[mysteryboy]
-def uselesshelpme():
-    output = "Sincerely, with all of my heart,\nNo."
-    return output
