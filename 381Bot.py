@@ -115,7 +115,7 @@ bot.add_command("nroute", "Show IP route table", nroute)
 
 
 # Every bot includes a default "/echo" command.  You can remove it, or any
-bot.remove_command("/echo")
+###bot.remove_command("/echo")
 
 if __name__ == "__main__":
     # Run Bot
