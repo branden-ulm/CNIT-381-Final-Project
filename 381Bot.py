@@ -78,16 +78,6 @@ def restconf(incoming_msg):
             )
 
     return response
-def clock(incoming_msg):
-    response = Response()
-    response.markdown = "Here is the time, check your watch next time\n"
-    response.markdown += useful.netmikoclock()
-    return response
-def isakmp(incoming_msg):
-    response = Response()
-    response.markdown = "Here is the vpn configuration I made for the project\n"
-    response.markdown += useful.netmikoisakmp()
-    return response
 def startup(incoming_msg):
     response = Response()
     response.markdown = "Here is the startup config, you should start studying if you need help with this\n"
@@ -118,13 +108,10 @@ bot.add_command("asv", "Show Version", ansible)
 bot.add_command("acl", "Access List", netmiko)
 bot.add_command("ms", "Start The Monitor", monitor)
 bot.add_command("rcarp", "Check Arp Table", restconf)
-bot.add_command("nclock", "Check Clock", clock)
 bot.add_command("nisakmp", "Check Isakmp Policy", isakmp)
 bot.add_command("nstart", "Check Startup Config", startup)
 bot.add_command("pickup", "For the boys", pickuplines)
-bot.add_command("helpme", "Need some Assistance?", helpme)
 bot.add_command("nroute", "Show IP route table", nroute)
-
 
 
 # Every bot includes a default "/echo" command.  You can remove it, or any
