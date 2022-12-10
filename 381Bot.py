@@ -43,21 +43,21 @@ def greeting(incoming_msg):
 
     # Create a Response object and craft a reply in Markdown.
     response = Response()
-    response.markdown = "Greetings {}, I am NamBot, I'm Your Branch Router Assistant  ".format(
+    response.markdown = "Hello {}, I am Mochi".format(
         sender.firstName
     )
-    response.markdown += "\n\nWhat do you want? I'm busy fixing our firewall labs \n**/help**."
+    ###response.markdown += "\n\nWhat do you want? I'm busy fixing our firewall labs \n**/help**."
     return response
 
 ##Doms Stuff
 def ansible(incoming_msg):
     response = Response()
-    response.markdown = "Here is the show version command, ansible is very cool\n"
+    ###response.markdown = "Here is the show version command, ansible is very cool\n"
     response.markdown += useful.ansibleskill()
     return response
 def netmiko(incoming_msg):
     response = Response()
-    response.markdown = "Here is some brief IP info, I know it might seem like a lot for your tiny brain\n"
+    ###response.markdown = "Here is some brief IP info, I know it might seem like a lot for your tiny brain\n"
     response.markdown += useful.netmikoskill()
     return response
 def monitor(incoming_msg):
@@ -69,9 +69,9 @@ def restconf(incoming_msg):
     arps = useful.get_arp(url_base, headers,device_username,device_password)
 
     if len(arps) == 0:
-        response.markdown = "I don't have any entries in my ARP table."
+        ###response.markdown = "I don't have any entries in my ARP table."
     else:
-        response.markdown = "Here is the ARP information I know you ungrateful engineer. \n\n"
+        ###response.markdown = "Here is the ARP information I know you ungrateful engineer. \n\n"
         for arp in arps:
             response.markdown += "* A device with IP {} and MAC {} are available on interface {}.\n".format(
                arp['address'], arp["hardware"], arp["interface"]
@@ -80,13 +80,8 @@ def restconf(incoming_msg):
     return response
 def startup(incoming_msg):
     response = Response()
-    response.markdown = "Here is the startup config, you should start studying if you need help with this\n"
+    ###response.markdown = "Here is the startup config, you should start studying if you need help with this\n"
     response.markdown += useful.netmikostartup()
-    return response
-def nroute(incoming_msg):
-    response = Response()
-    response.markdown = "Here is the routing table, this might hurt your tiny brain\n"
-    response.markdown += useful.netmikoroute()
     return response
 def rps(incoming_msg):
     response = Response()
@@ -108,10 +103,8 @@ bot.add_command("asv", "Show Version", ansible)
 bot.add_command("acl", "Access List", netmiko)
 bot.add_command("ms", "Start The Monitor", monitor)
 bot.add_command("rcarp", "Check Arp Table", restconf)
-bot.add_command("nisakmp", "Check Isakmp Policy", isakmp)
-bot.add_command("nstart", "Check Startup Config", startup)
+###bot.add_command("nstart", "Check Startup Config", startup)
 bot.add_command("pickup", "For the boys", pickuplines)
-bot.add_command("nroute", "Show IP route table", nroute)
 
 
 # Every bot includes a default "/echo" command.  You can remove it, or any
