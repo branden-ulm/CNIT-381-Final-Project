@@ -10,16 +10,16 @@ import subprocess
 import time
 import random
 
-def netmikoskill():
-    router = {'device_type': 'cisco_ios', 'host': '192.168.56.102', 'username': 'cisco','password': 'cisco123!','port': 22, 'secret': 'cisco', 'verbose': True}
-    #establish connection and check config state
+router = {'device_type': 'cisco_ios', 'host': '192.168.56.102', 'username': 'cisco','password': 'cisco123!','port': 22, 'secret': 'cisco', 'verbose': True}
+
+def accesslist():
     connection = ConnectHandler(**router)
     prompt = connection.find_prompt()
     if '>' in prompt:
         connection.enable()
     #send commands and check output
     output = ""
-    output += connection.send_command("show ip int brief")
+    output += connection.send_command("show ip access-list")
     connection.disconnect()
     return output
 def ansibleskill():
