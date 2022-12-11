@@ -4,7 +4,7 @@ from webexteamsbot.models import Response
 
 ### Utilities Libraries
 import routers
-import BotSkills as useful
+import Skills as useful
 
 # Router Info 
 device_address = routers.router['host']
@@ -18,10 +18,11 @@ headers = {'Content-Type': 'application/yang-data+json',
            'Accept': 'application/yang-data+json'}
 
 # Bot Details
-bot_email = 'NamBot1.0@webex.bot'
-teams_token = 'YjM3M2YyZDMtOTdkYS00N2U4LWE4ZjEtYzY5OTU4MjUwZGM1Y2YzZjI3M2MtNzk5_P0A1_b34062fa-24f1-480f-a815-05d10d8cf4f2'
-bot_url = "https://4412-144-13-254-61.ngrok.io"
-bot_app_name = 'CNIT-381 Network Auto Chat Bot'
+bot_email = 'Mochi_@webex.bot' #Enter the bot email address
+teams_token = 'NGI1NTEzYmQtNjQxMC00YmZhLThlNTMtZWRhODUzOWQ2Mjg2MDRhMzcxNjYtYTRj_P0A1_af949325-f1e2-44dc-a297-78a9bdf6f617' #Enter the bot access token
+bot_url = "https://1d44-216-222-173-8.ngrok.io" #Enter the forwarding address from the ngrok command
+bot_app_name = 'Mochi' #Enter the name of the ChatBot
+
 # Create a Bot Object
 #   Note: debug mode prints out more details about processing to terminal
 bot = TeamsBot(
@@ -43,16 +44,15 @@ def greeting(incoming_msg):
 
     # Create a Response object and craft a reply in Markdown.
     response = Response()
-    response.markdown = "Hello {}, I am Mochi".format(
+    response.markdown = "Hello {}, I am Mochi, your personal networking chat bot and dating guru.".format(
         sender.firstName
     )
-    ###response.markdown += "\n\nWhat do you want? I'm busy fixing our firewall labs \n**/help**."
+    response.markdown += "\n\nWhat kind of help do you need? To see what I have to offer, all you have to do is ask for \n**/help**."
     return response
 
-##Doms Stuff
 def show_run(incoming_msg):
     response = Response()
-    ###response.markdown = "Here is the show version command, ansible is very cool\n"
+    response.markdown = "Here is the show run | sec interface.\n"
     response.markdown += useful.show_runskill()
     return response
 def accesslist(incoming_msg):
@@ -71,7 +71,7 @@ def restconf(incoming_msg):
     if len(arps) == 0:
         response.markdown = "I don't have any entries in my ARP table."
     else:
-        response.markdown = "Here is the ARP information. \n\n"
+        response.markdown = "Here is the current ARP information. \n\n"
         for arp in arps:
             response.markdown += "* A device with IP {} and MAC {} are available on interface {}.\n".format(
                arp['address'], arp["hardware"], arp["interface"]
