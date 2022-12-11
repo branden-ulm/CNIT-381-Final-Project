@@ -71,7 +71,7 @@ def restconf(incoming_msg):
     if len(arps) == 0:
         response.markdown = "I don't have any entries in my ARP table."
     else:
-        response.markdown = "Here is the ARP information I know you ungrateful engineer. \n\n"
+        response.markdown = "Here is the ARP information. \n\n"
         for arp in arps:
             response.markdown += "* A device with IP {} and MAC {} are available on interface {}.\n".format(
                arp['address'], arp["hardware"], arp["interface"]
