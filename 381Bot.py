@@ -55,10 +55,10 @@ def ansible(incoming_msg):
     ###response.markdown = "Here is the show version command, ansible is very cool\n"
     response.markdown += useful.ansibleskill()
     return response
-def netmiko(incoming_msg):
+def accesslist(incoming_msg):
     response = Response()
-    ###response.markdown = "Here is some brief IP info, I know it might seem like a lot for your tiny brain\n"
-    response.markdown += useful.netmikoskill()
+    response.markdown = "When you can't reach something, have you checked your access lists?\n"
+    response.markdown += useful.accesslist()
     return response
 def monitor(incoming_msg):
         useful.monitorskill()
