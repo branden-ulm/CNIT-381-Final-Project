@@ -8,7 +8,7 @@ This project involves the creation of a Webex automation chatbot to complete var
 In order to run the code used in the lab, the following things are needed:
 
 - Working Linux Environment
-- Downloaded Code above
+- Downloaded code from above
 - Webex Account
 - ChatBot Credentials
 
