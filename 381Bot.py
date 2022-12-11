@@ -100,7 +100,7 @@ bot.set_greeting(greeting)
 
 # Add Bot's Commmands
 bot.add_command("sri", "Shows the inteface section of running config", show_run)
-bot.add_command("acl", "Access List", netmiko)
+bot.add_command("acl", "Access List", accesslist)
 bot.add_command("ms", "Start The Monitor", monitor)
 bot.add_command("arp", "This will show the arp table", restconf)
 ###bot.add_command("nstart", "Check Startup Config", startup)
