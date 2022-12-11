@@ -3,7 +3,6 @@ import sys
 ### For RESTCONF
 import requests
 import json
-##for our stuff
 from netmiko import Netmiko
 from netmiko import ConnectHandler
 import subprocess
@@ -23,7 +22,7 @@ def accesslist():
     connection.disconnect()
     return output
 def show_runskill():
-    temp = subprocess.Popen("ansible router1 -i ./inventory.txt -m raw -a 'show run | section interface' > temp.txt", shell=True, stdout = subprocess.PIPE)
+    temp = subprocess.Popen("ansible router1 -i ./inventory.txt -m raw -a 'show run | sec interface' > temp.txt", shell=True, stdout = subprocess.PIPE)
     output = str(temp.communicate())
     output = ''
     time.sleep(1)
