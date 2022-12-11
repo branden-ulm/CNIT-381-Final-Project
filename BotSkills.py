@@ -23,7 +23,7 @@ def accesslist():
     connection.disconnect()
     return output
 def show_runskill():
-    temp = subprocess.Popen("ansible router1 -i ./inventory.txt -m raw -a 'show version' > temp.txt", shell=True, stdout = subprocess.PIPE)
+    temp = subprocess.Popen("ansible router1 -i ./inventory.txt -m raw -a 'show run | section interface' > temp.txt", shell=True, stdout = subprocess.PIPE)
     output = str(temp.communicate())
     output = ''
     time.sleep(1)
