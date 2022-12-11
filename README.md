@@ -12,9 +12,9 @@ In order to run the code used in the lab, the following things are needed:
 - Webex Account
 - ChatBot Credentials
 
-##Creating the ChatBot
+## Creating the ChatBot
 
-####Step One
+#### Step One
 First, a Webex developer account is going to be needed. Navigate to https://developer.webex.com to either login or create a new account. 
 
 #### Step Two
@@ -30,17 +30,13 @@ Download the above files to an easily accessible folder directory. Run the confi
 
 #### Step Two
 Open a terminal on the Linux environment. Install required packages using the following commands.
-<pre><code>
-sudo snap install ngrok
+<pre><code>sudo snap install ngrok
 pip3 install webexteanssdk
-pip3 install webexteamsbot
-</code></pre>
+pip3 install webexteamsbot</code></pre>
 
 #### Step Three
 Run the following command to allow for a successful bot connection. 
-<pre><code>
-ngrok http 5000
-</code></pre>
+<pre><code>ngrok http 5000</code></pre>
 Leave the terminal open to keep the connection active and save the forwarding address highlighted below for the next step.
 
 ## Connecting to the ChatBot
