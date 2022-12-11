@@ -50,10 +50,10 @@ def greeting(incoming_msg):
     return response
 
 ##Doms Stuff
-def ansible(incoming_msg):
+def show_run(incoming_msg):
     response = Response()
     ###response.markdown = "Here is the show version command, ansible is very cool\n"
-    response.markdown += useful.ansibleskill()
+    response.markdown += useful.show_runskill()
     return response
 def accesslist(incoming_msg):
     response = Response()
@@ -99,7 +99,7 @@ def helpme(incoming_msg):
 bot.set_greeting(greeting)
 
 # Add Bot's Commmands
-bot.add_command("asv", "Show Version", ansible)
+bot.add_command("sri", "Shows the inteface section of running config", show_run)
 bot.add_command("acl", "Access List", netmiko)
 bot.add_command("ms", "Start The Monitor", monitor)
 bot.add_command("arp", "This will show the arp table", restconf)
