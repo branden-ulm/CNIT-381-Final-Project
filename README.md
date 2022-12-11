@@ -60,4 +60,4 @@ If done correctly, the chat screen should look simlar to the screenshot below.
 
 ![Alt text](/Screenshots/webexconvo.png)
 
-If the bot does not respond to your messages, ![Alt text](/Screenshots/hamster.jpg=100x100)
+If the bot does not respond to your messages, ![Alt text](/Screenshots/hamster.jpg)
