@@ -38,7 +38,7 @@ pip3 install webexteamsbot</code></pre>
 Run the following command to allow for a successful bot connection. 
 <pre><code>ngrok http 5000</code></pre>
 Leave the terminal open to keep the connection active and save the forwarding address highlighted below for the next step.
-
+![Alt text](/Screenshots/ngrok.png)
 ## Connecting to the ChatBot
 
 #### Step One
@@ -54,44 +54,6 @@ If done correctly, the chat screen should look simlar to the screenshot below.
 
 
 
-<pre><code>This is a code block.
-</code></pre>
 
-<p>Here is an example of AppleScript:</p>
-
-<pre><code>tell application "Foo"
-    beep
-end tell
-</code></pre>
-
-
-I get 10 times more traffic from [Google][] than from
-[Yahoo][] or [MSN][].
-
-  [google]: http://google.com/        "Google"
-  [yahoo]:  http://search.yahoo.com/  "Yahoo Search"
-  [msn]:    http://search.msn.com/    "MSN Search"
-  
-  *single asterisks*
-
-_single underscores_
-
-**double asterisks**
-
-__double underscores__
-
-un*frigging*believable
-
-Use the `printf()` function.
-
-* * *
-
-***
-
-*****
-
-- - -
-
----------------------------------------
 
 ![Alt text](/hamster.jpg)
