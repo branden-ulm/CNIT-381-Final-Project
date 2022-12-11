@@ -63,15 +63,15 @@ def accesslist(incoming_msg):
 def monitor(incoming_msg):
         useful.monitorskill()
 def restconf(incoming_msg):
-    """Return the arp table from device
+    """Returns arp table
     """
     response = Response()
     arps = useful.get_arp(url_base, headers,device_username,device_password)
 
     if len(arps) == 0:
-        ###response.markdown = "I don't have any entries in my ARP table."
+        response.markdown = "I don't have any entries in my ARP table."
     else:
-        ###response.markdown = "Here is the ARP information I know you ungrateful engineer. \n\n"
+        response.markdown = "Here is the ARP information I know you ungrateful engineer. \n\n"
         for arp in arps:
             response.markdown += "* A device with IP {} and MAC {} are available on interface {}.\n".format(
                arp['address'], arp["hardware"], arp["interface"]
@@ -102,7 +102,7 @@ bot.set_greeting(greeting)
 bot.add_command("asv", "Show Version", ansible)
 bot.add_command("acl", "Access List", netmiko)
 bot.add_command("ms", "Start The Monitor", monitor)
-bot.add_command("rcarp", "Check Arp Table", restconf)
+bot.add_command("arp", "This will show the arp table", restconf)
 ###bot.add_command("nstart", "Check Startup Config", startup)
 bot.add_command("pickup", "For the boys", pickuplines)
 
