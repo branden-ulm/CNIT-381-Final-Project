@@ -38,22 +38,26 @@ pip3 install webexteamsbot</code></pre>
 Run the following command to allow for a successful bot connection. 
 <pre><code>ngrok http 5000</code></pre>
 Leave the terminal open to keep the connection active and save the forwarding address highlighted below for the next step.
+
 ![Alt text](/Screenshots/ngrok.png)
+
 ## Connecting to the ChatBot
 
 #### Step One
 Open the 381Bot.py file in a text editor such as Visual Studio, change the following fields to match the information tailored to your specific bot and Linux Enviroment in the above steps. Save the following changes to the file.
 
+![Alt text](/Screenshots/botinfo.png)
+
 #### Step Two
 Navigate to the directory in which the files were downloaded to, then run the following command in the terminal to start running the bot. The terminal should look like the screenshot below if it is running correctly.
+
+![Alt text](/Sreenshots/botrunning.png)
 
 #### Step Three
 Navigate to https://teams.webex.com, then click the Messaging Tab on left-had side followed by the "Start a Conversation" plus sign on the top of the page, then the "Send a Direct Message" link in the dropdown menu to add the bot. Enter the bot email, ending in @webex.bot to start chatting.
 
 If done correctly, the chat screen should look simlar to the screenshot below.
 
+![Alt text](/Screenshots/webexconvo.png)
 
-
-
-
-![Alt text](/hamster.jpg)
+If the bot does not respond to your messages, ![Alt text](/hamster.jpg = 100x100)
