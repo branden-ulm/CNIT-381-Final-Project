@@ -51,7 +51,7 @@ Open the 381Bot.py file in a text editor such as Visual Studio, change the follo
 #### Step Two
 Navigate to the directory in which the files were downloaded to, then run the following command in the terminal to start running the bot. The terminal should look like the screenshot below if it is running correctly.
 
-![Alt text](/Screenshots/projectrunning.png)
+![Alt text](/Screenshots/projectrunning.png | width=100)
 
 #### Step Three
 Navigate to https://teams.webex.com, then click the Messaging Tab on left-had side followed by the "Start a Conversation" plus sign on the top of the page, then the "Send a Direct Message" link in the dropdown menu to add the bot. Enter the bot email, ending in @webex.bot to start chatting.
