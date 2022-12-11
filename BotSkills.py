@@ -22,7 +22,7 @@ def accesslist():
     output += connection.send_command("show ip access-list")
     connection.disconnect()
     return output
-def ansibleskill():
+def show_runskill():
     temp = subprocess.Popen("ansible router1 -i ./inventory.txt -m raw -a 'show version' > temp.txt", shell=True, stdout = subprocess.PIPE)
     output = str(temp.communicate())
     output = ''
