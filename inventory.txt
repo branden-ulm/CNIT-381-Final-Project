@@ -1,6 +1,6 @@
 [routers]
-router1 ansible_host=192.168.56.101
-router2 ansible_host=192.168.56.102
+router1 ansible_host=192.168.56.102
+router2 ansible_host=192.168.56.105
 
 [routers:vars]
 ansible_network_os=ios
