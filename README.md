@@ -4,7 +4,7 @@
 
 This project involves the creation of a Webex automation chatbot to complete various assignments between a branch and HQ router, including running commands and checking the status of the branch router and automatically updating the tunnel IP address on the HQ router to maintain a VPN connection with the branch router as it dynamically changes. 
 
-## Prerequisites
+## Necessary Things
 In order to run the code used in the lab, the following things are needed:
 
 - Working Linux Environment
