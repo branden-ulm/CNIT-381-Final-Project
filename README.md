@@ -1,4 +1,4 @@
-# CNIT-381-Final-Project
+# Automation Chat Bot
 
 ## Project Description
 
