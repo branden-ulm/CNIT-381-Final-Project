@@ -1,3 +1,4 @@
+# Imported Libraries
 import os
 import sys
 import requests
@@ -10,6 +11,7 @@ import random
 
 router = {'device_type': 'cisco_ios', 'host': '192.168.56.102', 'username': 'cisco','password': 'cisco123!','port': 22, 'secret': 'cisco', 'verbose': True}
 
+#Code for Netmiko Skill
 def accesslist():
     connection = ConnectHandler(**router)
     prompt = connection.find_prompt()
@@ -20,6 +22,8 @@ def accesslist():
     output += connection.send_command("show ip access-list")
     connection.disconnect()
     return output
+
+#Code for Ansible Skill
 def show_runskill():
     temp = subprocess.Popen("ansible router1 -i ./inventory.txt -m raw -a 'show run | sec interface' > temp.txt", shell=True, stdout = subprocess.PIPE)
     output = str(temp.communicate())
@@ -31,6 +35,8 @@ def show_runskill():
     temp.close()
     subprocess.Popen("rm temp.txt", shell=True, stdout = subprocess.PIPE)
     return output
+
+#Code for RESTCONF Skill
 def get_arp(url_base,headers,username,password):
     url = url_base + "/data/Cisco-IOS-XE-arp-oper:arp-data/"
 
@@ -43,39 +49,47 @@ def get_arp(url_base,headers,username,password):
 
     # return the json as text
     return response.json()['Cisco-IOS-XE-arp-oper:arp-data']['arp-vrf'][0]['arp-oper']
+
+#Code for the Monitor Skill
 def monitorskill():
-    prevIP = ""
-    currIP = ""
+    old = ""
+    new = ""
     while True:
-        #step 1, finding the changed address of branch router
         router = {'device_type': 'cisco_ios', 'host': '192.168.56.102', 'username': 'cisco','password': 'cisco123!','port': 22, 'secret': 'cisco', 'verbose': True}
         connection = ConnectHandler(**router)
         prompt = connection.find_prompt()
+        
         if '>' in prompt:
             connection.enable()
+            
         output = ""
         output += connection.send_command("show ip int GigabitEthernet2 | i Internet")
         connection.disconnect()
-        currIP = output[output.find("is")+3:output.find("/")]
-        if currIP != prevIP:
-            comtosend = "set peer "+currIP
-            #step 2, changing the vpn setting of router 2
+        old = output[output.find("is")+3:output.find("/")]
+        
+        if new != old:
+            comtosend = "set peer "+old
+            
             router2 = {'device_type': 'cisco_ios', 'host': '192.168.56.105', 'username': 'cisco','password': 'cisco123!','port': 22, 'secret': 'cisco', 'verbose': True}
             connection = ConnectHandler(**router2)
             prompt = connection.find_prompt()
+            
             if '>' in prompt:
                 connection.enable()
+               
             output = connection.send_command("show run | i set peer")
-            prevIP = output[output.find("peer")+4:]
+            
+            old = output[output.find("peer")+4:]
             rempeercom = "no set peer "+prevIP
             connection.send_config_set(["crypto map Crypt 10 ipsec-isakmp", rempeercom])
-            connection.send_config_set(["no crypto isakmp key cisco address "+prevIP])
+            connection.send_config_set(["no crypto isakmp key cisco address "+old])
             connection.send_config_set(["crypto map Crypt 10 ipsec-isakmp", comtosend])
-            connection.send_config_set(["crypto isakmp key cisco address "+currIP])
-            print("IP Changed from "+prevIP+" to "+currIP)
-            prevIP = currIP
+            connection.send_config_set(["crypto isakmp key cisco address "+new])
+            print("The IP Changed from "+old+" to "+new)
+            old = new
         time.sleep(30)
-#useful code here ;)
+        
+#Code for Pickup line Skill
 def pickuplines():
     quotes = ["Are you a MAC address, because I'd put you on my ARP table?",
               "You had me at 'Hello World'", "Do you like firewalls? I use protection.", 
