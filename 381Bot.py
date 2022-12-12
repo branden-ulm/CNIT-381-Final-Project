@@ -78,11 +78,7 @@ def restconf(incoming_msg):
             )
 
     return response
-def startup(incoming_msg):
-    response = Response()
-    ###response.markdown = "Here is the startup config, you should start studying if you need help with this\n"
-    response.markdown += useful.netmikostartup()
-    return response
+
 def rps(incoming_msg):
     response = Response()
     response.markdown = useful.uselessrps()
@@ -103,12 +99,7 @@ bot.add_command("sri", "Shows the inteface section of running config", show_run)
 bot.add_command("acl", "Access List", accesslist)
 bot.add_command("ms", "Start The Monitor", monitor)
 bot.add_command("arp", "This will show the arp table", restconf)
-###bot.add_command("nstart", "Check Startup Config", startup)
 bot.add_command("pickup", "For the boys", pickuplines)
-
-
-# Every bot includes a default "/echo" command.  You can remove it, or any
-###bot.remove_command("/echo")
 
 if __name__ == "__main__":
     # Run Bot
