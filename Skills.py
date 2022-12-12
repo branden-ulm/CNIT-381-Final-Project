@@ -49,6 +49,20 @@ def get_arp(url_base,headers,username,password):
 
     # return the json as text
     return response.json()['Cisco-IOS-XE-arp-oper:arp-data']['arp-vrf'][0]['arp-oper']
+        
+#Code for Pickup line Skill
+def pickuplines():
+    quotes = ["Are you a MAC address, because I'd put you on my ARP table?",
+              "You had me at 'Hello World'", "Do you like firewalls? I use protection.", 
+              "My server never goes down, but I would for you.",
+              "Baby, you must be running on TCP - everytime I talk to you, you give me an ACK.",
+              "seq 69 permit any any", "Are you my standby router, because you're hot.", 
+              "You are my favorite mode, promiscuous... ", "ICMP; I see you and me.", 
+              "I wish I was your keyboard so I could be your type.", "Are you my EIGRP Neighbor, because I want to form an adjacency.", 
+              "If I'd put you in my trunk, you would be dynamic-desirable :)"]
+    
+    mysteryboy = random.randint(0,len(quotes)-1)
+    return quotes[mysteryboy]
 
 #Code for the Monitor Skill
 def monitorskill():
@@ -88,17 +102,3 @@ def monitorskill():
             print("The IP Changed from "+old+" to "+new)
             old = new
         time.sleep(30)
-        
-#Code for Pickup line Skill
-def pickuplines():
-    quotes = ["Are you a MAC address, because I'd put you on my ARP table?",
-              "You had me at 'Hello World'", "Do you like firewalls? I use protection.", 
-              "My server never goes down, but I would for you.",
-              "Baby, you must be running on TCP - everytime I talk to you, you give me an ACK.",
-              "seq 69 permit any any", "Are you my standby router, because you're hot.", 
-              "You are my favorite mode, promiscuous... ", "ICMP; I see you and me.", 
-              "I wish I was your keyboard so I could be your type.", "Are you my EIGRP Neighbor, because I want to form an adjacency.", 
-              "If I'd put you in my trunk, you would be dynamic-desirable :)"]
-    
-    mysteryboy = random.randint(0,len(quotes)-1)
-    return quotes[mysteryboy]
