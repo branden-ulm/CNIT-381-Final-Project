@@ -43,11 +43,14 @@ def greeting(incoming_msg):
     response.markdown += "\n\nWhat kind of help do you need? To see what I have to offer, all you have to do is ask for \n**/help**."
     return response
 # function used to point to the skills file for specific skill
+
+#ansible skill
 def show_run(incoming_msg):
     response = Response()
     response.markdown = "Here is the show run | sec interface.\n"
     response.markdown += useful.show_runskill()
     return response
+#netmiko
 def accesslist(incoming_msg):
     response = Response()
     response.markdown = "When you can't reach something, have you checked your access lists?\n"
@@ -55,6 +58,7 @@ def accesslist(incoming_msg):
     return response
 def monitor(incoming_msg):
         useful.monitorskill()
+#restconf
 def restconf(incoming_msg):
     """Returns arp table
     """
