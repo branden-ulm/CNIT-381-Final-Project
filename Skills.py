@@ -1,6 +1,5 @@
 import os
 import sys
-### For RESTCONF
 import requests
 import json
 from netmiko import Netmiko
