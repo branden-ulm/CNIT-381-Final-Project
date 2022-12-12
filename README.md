@@ -1,4 +1,4 @@
-# Automation Chat Bot MOCHI_
+# Automation Chat Bot Mochi
 
 ## Project Description
 
