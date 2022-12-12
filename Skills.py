@@ -35,7 +35,7 @@ def show_runskill():
 def get_arp(url_base,headers,username,password):
     url = url_base + "/data/Cisco-IOS-XE-arp-oper:arp-data/"
 
-    # this statement performs a GET on the specified url
+    # this statement performs a GET request on the specified url
     response = requests.get(url,
                             auth=(username, password),
                             headers=headers,
