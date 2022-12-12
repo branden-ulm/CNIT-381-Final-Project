@@ -1,8 +1,6 @@
-### teams Bot ###
 from webexteamsbot import TeamsBot
 from webexteamsbot.models import Response
 
-### Utilities Libraries
 import routers
 import Skills as useful
 
@@ -11,20 +9,19 @@ device_address = routers.router['host']
 device_username = routers.router['username']
 device_password = routers.router['password']
 
-# RESTCONF Setup
+# apply information for restconf
 port = '443'
 url_base = "https://{h}/restconf".format(h=device_address)
 headers = {'Content-Type': 'application/yang-data+json',
            'Accept': 'application/yang-data+json'}
 
-# Bot Details
+# bot info
 bot_email = 'Mochi_@webex.bot' #Enter the bot email address
 teams_token = 'NGI1NTEzYmQtNjQxMC00YmZhLThlNTMtZWRhODUzOWQ2Mjg2MDRhMzcxNjYtYTRj_P0A1_af949325-f1e2-44dc-a297-78a9bdf6f617' #Enter the bot access token
 bot_url = "https://1d44-216-222-173-8.ngrok.io" #Enter the forwarding address from the ngrok command
 bot_app_name = 'Mochi' #Enter the name of the ChatBot
 
-# Create a Bot Object
-#   Note: debug mode prints out more details about processing to terminal
+
 bot = TeamsBot(
     bot_app_name,
     teams_bot_token=teams_token,
@@ -36,20 +33,16 @@ bot = TeamsBot(
         {"resource": "attachmentActions", "event": "created"},],
 )
 
-# Create a function to respond to messages that lack any specific command
-# The greeting will be friendly and suggest how folks can get started.
+# this function greats the user
 def greeting(incoming_msg):
-    # Loopkup details about sender
     sender = bot.teams.people.get(incoming_msg.personId)
-
-    # Create a Response object and craft a reply in Markdown.
     response = Response()
     response.markdown = "Hello {}, I am Mochi, your personal networking chat bot and dating guru.".format(
         sender.firstName
     )
     response.markdown += "\n\nWhat kind of help do you need? To see what I have to offer, all you have to do is ask for \n**/help**."
     return response
-
+# function used to point to the skills file for specific skill
 def show_run(incoming_msg):
     response = Response()
     response.markdown = "Here is the show run | sec interface.\n"
@@ -79,10 +72,6 @@ def restconf(incoming_msg):
 
     return response
 
-def rps(incoming_msg):
-    response = Response()
-    response.markdown = useful.uselessrps()
-    return response
 def pickuplines(incoming_msg):
     response = Response()
     response.markdown = useful.pickuplines()
@@ -91,10 +80,10 @@ def helpme(incoming_msg):
     response = Response()
     response.markdown = useful.uselesshelpme()
     return response
-# Set the bot greeting.
+
 bot.set_greeting(greeting)
 
-# Add Bot's Commmands
+# gives options for bot commands
 bot.add_command("sri", "Shows the inteface section of running config", show_run)
 bot.add_command("acl", "Access List", accesslist)
 bot.add_command("ms", "Start The Monitor", monitor)
